@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image to Prompt Generator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Image to Prompt Generator</h1>
+        <input type="file" id="imageInput" accept="image/*">
+        <div id="imagePreview"></div>
+        <button id="generateBtn">Generate Prompt</button>
+        <div id="processingBar" class="processing-bar">
+            <div class="progress"></div>
+        </div>
+        <div id="result">
+            <h2>Generated Prompt:</h2>
+            <div class="prompt-container">
+                <p id="promptOutput"></p>
+                <button id="copyBtn">Copy</button>
+            </div>
+        </div>
+    </div>
+    <script src="config.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
