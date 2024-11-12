@@ -30,13 +30,15 @@ function encodeImageToBase64(file) {
 // Function to generate prompt using Gemini API
 async function generatePrompt(imageBase64, progressCallback) {
     const apiKey = config.GEMINI_API_KEY;
-    const apiUrl = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent';
+    const apiUrl = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro-002:generateContent';
     
     const requestBody = {
         contents: [
             {
                 parts: [
-                    { text: "Generate a detailed prompt describing this image for use in text-to-image AI models:" },
+{
+  "text": "Generate an ultra-highly detailed prompt describing this image for use in text-to-image AI models, including specific elements like art style, mood, lighting, and texturing. Start by describing the overall scene, capturing any key focal points, objects, or characters in rich detail. Specify the art style, such as photorealistic, hyper-detailed fantasy, impressionistic, or cyberpunk, to align with the visual theme. Set the mood with descriptors like tranquil, eerie, vibrant, or melancholic, and describe the lighting direction, quality, and color, such as soft golden-hour light, dramatic shadows, or neon reflections. Note the textures for surfaces, materials, and atmosphere, such as rough stone, sleek metal, or misty air. Include small details, such as the time of day, specific colors, any weather conditions, and even the type of camera or lens style, like cinematic or macro focus, to enhance realism and immersion."
+}
                     { inline_data: { mime_type: "image/jpeg", data: imageBase64 } }
                 ]
             }
